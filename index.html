@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Horario de Pico Adventure</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Tela de Início -->
+  <div id="telaInicio" class="tela ativa">
+    <img src="imagens/inicio.png" alt="Tela de Início">
+    <button class="botao-jogar" onclick="mudarTela('telaApresentacao')">Jogar</button>
+  </div>
+
+  <!-- Tela de Apresentação -->
+  <div id="telaApresentacao" class="tela">
+    <img src="imagens/apresentacao.png" alt="Apresentação">
+    <div class="botao-container">
+      <button class="botao-neon" onclick="mudarTela('telaEscolhas')">Próximo</button>
+    </div>
+  </div>
+
+  <!-- Tela Escolhas -->
+  <div id="telaEscolhas" class="tela">
+    <img src="imagens/nao_existe_amor.png" alt="Não Existe Amor">
+    <div class="botao-container">
+      <button class="botao-neon" onclick="comprarGuardaChuva()">Comprar (-5 reais)</button>
+      <button class="botao-neon" onclick="mudarTela('telaEsperarOuNao')">Próximo</button>
+    </div>
+  </div>
+
+  <!-- Tela Esperar ou Não -->
+  <div id="telaEsperarOuNao" class="tela">
+    <img src="imagens/esperarounao.png" alt="Esperar ou Não">
+    <div class="botao-container">
+      <button class="botao-neon" onclick="mudarTela('telaEsperarMuito')">Esperar Mais</button>
+      <button class="botao-neon" onclick="mudarTela('telaPegarBus')">Sair do Metrô</button>
+    </div>
+  </div>
+
+  <!-- Tela Pegar Ônibus -->
+  <div id="telaPegarBus" class="tela">
+    <img src="imagens/pegarbus.png" alt="Pegar Ônibus">
+    <div class="botao-container">
+      <button class="botao-neon" onclick="mudarTela('telaDentroDoBus')">Continuar</button>
+    </div>
+  </div>
+
+  <!-- Tela Dentro do Ônibus -->
+  <div id="telaDentroDoBus" class="tela">
+    <img src="imagens/dentrodobus.png" alt="Dentro do Ônibus">
+    <div class="botao-container">
+      <button class="botao-neon" onclick="mudarTela('telaOnibusQuebrou')">Esperar</button>
+      <button class="botao-neon" onclick="mudarTela('telaEsgotoOuNao')">Sair do Ônibus</button>
+    </div>
+  </div>
+
+  <!-- Tela Ônibus Quebrou -->
+  <div id="telaOnibusQuebrou" class="tela">
+    <img src="imagens/onibusquebrou.png" alt="Ônibus Quebrou">
+    <div class="botao-container">
+      <button class="botao-neon" onclick="mudarTela('telaInicio')">Recomeçar</button>
+    </div>
+  </div>
+
+  <!-- Tela Esgoto ou Não -->
+  <div id="telaEsgotoOuNao" class="tela">
+    <img src="imagens/esgotoounao.png" alt="Esgoto ou Não">
+    <div class="botao-container">
+      <button class="botao-neon" onclick="mudarTela('telaEsgoto')">Ir Pelo Bueiro</button>
+      <button class="botao-neon" onclick="mudarTela('telaManifestacao')">Passar</button>
+    </div>
+  </div>
+
+  <!-- Tela Esgoto -->
+  <div id="telaEsgoto" class="tela">
+    <img src="imagens/esgoto.png" alt="Esgoto">
+    <div class="botao-container">
+      <button class="botao-neon" onclick="mudarTela('telaDestruidor')">Ajudar</button>
+    </div>
+  </div>
+
+  <!-- Tela Destruidor -->
+  <div id="telaDestruidor" class="tela">
+    <img src="imagens/destruidor.png" alt="Destruidor">
+    <div class="botao-container">
+      <button class="botao-neon" onclick="mudarTela('telaTijoladaOuChute')">Tijolada</button>
+      <button class="botao-neon" onclick="mudarTela('telaTijoladaOuChute')">Chute</button>
+    </div>
+  </div>
+
+  <!-- Tela Tijolada ou Chute -->
+  <div id="telaTijoladaOuChute" class="tela">
+    <img src="imagens/tartarugapopular.png" alt="Tartaruga Popular">
+    <div class="botao-container">
+      <button class="botao-neon" onclick="mudarTela('telaInicio')">Recomeçar</button>
+    </div>
+  </div>
+
+  <!-- Tela Manifestação -->
+  <div id="telaManifestacao" class="tela">
+    <img src="imagens/manifestacao.png" alt="Manifestação">
+    <div class="botao-container">
+      <button class="botao-neon" onclick="mudarTela('telaEscolhas')">Continuar</button>
+      <button class="botao-neon" onclick="mudarTela('telaParadoai')">Explicar a História</button>
+    </div>
+  </div>
+
+  <!-- Tela Paradoai -->
+  <div id="telaParadoai" class="tela">
+    <img src="imagens/paradoai.png" alt="Paradoai">
+    <div class="botao-container">
+      <button class="botao-neon" onclick="mudarTela('telaInicio')">Recomeçar</button>
+      <button class="botao-neon" onclick="mudarTela('telaODestino')">Continuar</button>
+    </div>
+  </div>
+
+  <!-- Tela O Destino -->
+  <div id="telaODestino" class="tela">
+    <img src="imagens/odestino.png" alt="O Destino">
+    <div class="botao-container">
+      <button class="botao-neon" onclick="mudarTela('telaAVida')">Continuar</button>
+    </div>
+  </div>
+
+  <!-- Tela A Vida -->
+  <div id="telaAVida" class="tela">
+    <img src="imagens/avida.png" alt="A Vida">
+    <div class="botao-container">
+      <button class="botao-neon" onclick="mudarTela('telaParabens')">Próximo</button>
+    </div>
+  </div>
+
+  <!-- Tela Parabéns -->
+  <div id="telaParabens" class="tela">
+    <img src="imagens/parabens.png" alt="Parabéns">
+    <div class="botao-container">
+      <button class="botao-neon" onclick="mudarTela('telaInicio')">Recomeçar</button>
+    </div>
+  </div>
+
+  <!-- Tela Estranho -->
+  <div id="telaEstranho" class="tela">
+    <img src="imagens/estranho.png" alt="Estranho">
+    <div class="botao-container">
+      <button class="botao-neon" onclick="ajudar()">Ajudar (-35 reais)</button>
+      <button class="botao-neon" onclick="mudarTela('telaPegarBus')">Ignorar</button>
+    </div>
+  </div>
+
+  <!-- Inventário -->
+  <div id="inventario" class="inventario">
+    <div id="dinheiro">Dinheiro: 50</div>
+    <div id="chance">Chance com a Crush: 100</div>
+    <div class="caixa-inventario" onclick="mostrarInventario()">
+      Itens
+    </div>
+  </div>
+
+  <script>
+    // Função para mudar as telas
+    function mudarTela(telaId) {
+      const telas = document.querySelectorAll('.tela');
+      telas.forEach(tela => {
+        tela.classList.remove('ativa');
+      });
+      document.getElementById(telaId).classList.add('ativa');
+    }
+
+    // Função para comprar o guarda-chuva
+    function comprarGuardaChuva() {
+      let dinheiro = parseInt(document.getElementById('dinheiro').innerText.split(' ')[1]);
+      if (dinheiro >= 5) {
+        dinheiro -= 5;
+        document.getElementById('dinheiro').innerText = `Dinheiro: ${dinheiro}`;
+        alert("Você comprou um guarda-chuva!");
+      } else {
+        alert("Dinheiro insuficiente!");
+      }
+    }
+
+    // Função para ajudar
+    function ajudar() {
+      let dinheiro = parseInt(document.getElementById('dinheiro').innerText.split(' ')[1]);
+      if (dinheiro >= 35) {
+        dinheiro -= 35;
+        document.getElementById('dinheiro').innerText = `Dinheiro: ${dinheiro}`;
+        alert("Você ajudou e perdeu 35 reais!");
+      } else {
+        alert("Dinheiro insuficiente para ajudar!");
+      }
+    }
+
+    // Função para mostrar o inventário
+    function mostrarInventario() {
+      alert("Inventário: (Aqui você pode adicionar itens futuros)");
+    }
+  </script>
+
+</body>
+</html>
